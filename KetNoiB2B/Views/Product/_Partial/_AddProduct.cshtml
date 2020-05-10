@@ -1,0 +1,301 @@
+﻿
+@model KetNoiB2B.Models.Product.ProductModel
+@{
+    Layout = null;
+}
+
+<div class="content-modal x_panel" id="addEditCategory">
+    <div class="x_title">
+        @if (Model.ProductID > 0)
+        {
+            <h2>
+                Sửa sản phẩm <small>Chỉnh sửa sản phẩm</small>
+            </h2>
+        }
+        else
+        {
+            <h2>
+                Tạo sản phẩm <small>Thêm mới sản phẩm</small>
+            </h2>
+        }
+        <div class="nav navbar-right panel_toolbox">
+            <a href="javascript:void(0)" class="close-link close k-grid-cancel"><i class="fa fa-close"></i></a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="x_content">
+        @using (Html.BeginForm("SaveProduct", "Product", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal form-label-left", id = "frmAddEditProduct" }))
+        {
+            @Html.HiddenFor(m => m.ProductID)
+            @Html.HiddenFor(m => m.StatusID)
+            @Html.HiddenFor(m => m.Currency)
+            @Html.HiddenFor(m => m.LengthUnit)
+            @Html.HiddenFor(m => m.WidthUnit)
+            @Html.HiddenFor(m => m.HeightUnit)
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Danh Mục <span class="Required">*</span></label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <select id="CategoryID" name="CategoryID" class="form-control">
+                        <option value="0">Chọn Danh Mục</option>
+                    </select>
+                    @Html.ValidationMessageFor(m => m.CategoryID)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Tên sản phẩm <span class="Required">*</span></label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control", @placeholder = "Tên sản phẩm" })
+                    @Html.ValidationMessageFor(m => m.ProductName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Mô tả sản phẩm</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    @Html.TextAreaFor(m => m.Description, new { @rows = "10", @cosl = "80" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Đơn vị</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    @Html.TextBoxFor(m => m.Unit, new { @class = "form-control", @placeholder = "Đơn vị" })
+                    @Html.ValidationMessageFor(m => m.Unit)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Giá chưa VAT</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    @Html.TextBoxFor(m => m.PriceNoneVAT, new { @class = "form-control", @placeholder = "Giá chưa VAT" })
+                    <span class="form-control-feedback right" aria-hidden="true">VND</span>
+                    @Html.ValidationMessageFor(m => m.PriceNoneVAT)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Giá bao gồm VAT</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    @Html.TextBoxFor(m => m.PriceWithVAT, new { @class = "form-control", @placeholder = "Giá bao gồm VAT" })
+                    <span class="form-control-feedback right" aria-hidden="true">VND</span>
+                    @Html.ValidationMessageFor(m => m.PriceWithVAT)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Giá thị trường</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    @Html.TextBoxFor(m => m.PriceReal, new { @class = "form-control", @placeholder = "Giá thị trường" })
+                    <span class="form-control-feedback right" aria-hidden="true">VND</span>
+                    @Html.ValidationMessageFor(m => m.PriceReal)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Giá thấp nhất thị trường</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    @Html.TextBoxFor(m => m.PriceRealMin, new { @class = "form-control", @placeholder = "Giá thấp nhất thị trường", @type = "numberic" })
+                    @*<input name="PriceRealMin" id="PriceRealMin" value="@Model.PriceRealMin" class="form-control" placeholder = "Giá thấp nhất thị trường" data-inputmask="'mask' : '999.999.999.999'"/>*@                    
+                    <span class="form-control-feedback right" aria-hidden="true">VND</span>
+                    @Html.ValidationMessageFor(m => m.PriceRealMin)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Giá cao nhất thị trường</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    @Html.TextBoxFor(m => m.PriceRealMax, new { @class = "form-control", @placeholder = "Giá cao nhất thị trường" })
+                    <span class="form-control-feedback right" aria-hidden="true">VND</span>
+                    @Html.ValidationMessageFor(m => m.PriceRealMax)
+                </div>
+            </div>
+
+            <label class="col-md-12 col-sm-12 col-xs-12">Kích thước</label>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Dài</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    @Html.TextBoxFor(m => m.Length, new { @class = "form-control", @placeholder = "Dài" })
+                    <span class="form-control-feedback right" aria-hidden="true">cm</span>
+                    @Html.ValidationMessageFor(m => m.Length)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Rộng</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    @Html.TextBoxFor(m => m.Width, new { @class = "form-control", @placeholder = "Rộng" })
+                    <span class="form-control-feedback right" aria-hidden="true">cm</span>
+                    @Html.ValidationMessageFor(m => m.Width)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Cao</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    @Html.TextBoxFor(m => m.Height, new { @class = "form-control", @placeholder = "Cao" })
+                    <span class="form-control-feedback right" aria-hidden="true">cm</span>
+                    @Html.ValidationMessageFor(m => m.Height)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Mô tả màu sắc</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    @Html.TextAreaFor(m => m.ColorDescription, new { @class = "form-control", @placeholder = "Mô tả màu sắc", @rows = "10", @cols = "5" })
+                    @Html.ValidationMessageFor(m => m.ColorDescription)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Ảnh minh họa</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div id="dZUpload" class="dropzone">
+                        <div class="dz-default dz-message">Kéo thả file ảnh vào đây. Hoặc click vào đây để chọn file ảnh upload.</div>
+                    </div>
+                </div>
+            </div>
+
+            if (Model.Images != null && Model.Images.Count > 0)
+            {
+                for (int i = 0; i < Model.Images.Count; i++)
+                {
+                    <input type="hidden" name="Images[@i].ProductImageID" value="@Model.Images[i].ProductImageID"/>
+                    <input type="hidden" name="Images[@i].FileName" value="@Model.Images[i].FileName"/>
+                    <input type="hidden" name="Images[@i].ImageUrl" value="@Model.Images[i].ImageUrl" />
+                }
+            }
+
+            <div class="ln_solid"></div>
+
+            <div class="form-group">
+                <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                    <button type="button" class="btn btn-primary k-grid-cancel">Hủy bỏ</button>
+                    <button type="submit" class="btn btn-success k-grid-update">Lưu</button>                    
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var listImages = [];
+        var $form = $('#frmAddEditProduct');
+        var $cbCate = $('#frmAddEditProduct #CategoryID');
+        var $txtPriceMin = $form.find('#PriceRealMin');
+
+        //$txtPriceMin.val(commaSeparateNumber($txtPriceMin.val()));
+        $txtPriceMin.on('change', function() {
+            //$txtPriceMin.mask('999.999.999.999');
+            //$txtPriceMin.val(commaSeparateNumber($txtPriceMin.val()));
+        });        
+
+        if ($cbCate.length > 0) {
+            $.ajax({
+                url: '/Product/GetDropdownListCategory',
+                data: {
+                    selected: @Model.CategoryID
+                    },
+                dataType: 'html',
+                success: function (result) {
+                    $cbCate.html(result);
+                },
+                error: function (jqXHR, textStatus) {
+                    console.error(textStatus);
+                }
+            });
+        }
+
+        // Replace the <textarea id="Description"> with a CKEditor
+        // instance, using default configuration.
+        var desc = CKEDITOR.instances.Description;
+        if (desc) {
+            desc.destroy(true);
+        }
+        desc = CKEDITOR.replace('Description');
+
+        Dropzone.autoDiscover = false;
+        var productImageDropzone = new Dropzone("#dZUpload", {
+            url: "/FileUploader/SaveUploadedFile",
+            addRemoveLinks: true,
+            maxFilesize: 2, // MB
+            maxFiles: 5,
+            parallelUploads: 5,
+            dictMaxFilesExceeded: "You can only upload upto 5 images",            
+            dictCancelUploadConfirmation: "Are you sure to cancel upload?",            
+            init: function() {
+                var myDropzone = this;
+                var countImages = $('input[name^="Images"]').length / 3;
+                for (var i = 0; i < countImages; i++) {
+                    var productImageId = $('input[name^="Images[' + i + '].ProductImageID"]').val();
+                    var fileName = $('input[name^="Images[' + i + '].FileName"]').val();
+                    var imageUrl = $('input[name^="Images[' + i + '].ImageUrl"]').val();
+                    var mockFile = {
+                        name: fileName,
+                        size: 1,
+                        type: 'image/jpeg'
+                    }
+                    myDropzone.options.addedfile.call(this, mockFile);
+                    myDropzone.options.thumbnail.call(this, mockFile, imageUrl);
+                    mockFile.previewElement.classList.add('dz-success');
+                    mockFile.previewElement.classList.add('dz-complete');
+                    var image = {
+                        ProductImageID: productImageId,
+                        FileName: fileName,
+                        ImageUrl: imageUrl
+                    }
+                    listImages.push(image);
+                }
+            },
+            success: function (file, response) {                
+                var imgUrl = response.Message;
+                file.previewElement.classList.add("dz-success");
+                var image = {
+                    ProductImageID: 0,
+                    FileName: file.name,
+                    ImageUrl: imgUrl
+                }
+                listImages.push(image);
+                $('input[name^="Images"]').remove();
+                $.each(listImages, function(i, v) {
+                    $form.append('<input type="hidden" name="Images[' + i + '].ProductImageID" value="' + v.ProductImageID + '" />');
+                    $form.append('<input type="hidden" name="Images[' + i + '].FileName" value="' + v.FileName + '" />');
+                    $form.append('<input type="hidden" name="Images[' + i + '].ImageUrl" value="' + v.ImageUrl + '" />');
+                });
+            },
+            error: function (file, response) {
+                file.previewElement.classList.add("dz-error");
+            },
+            removedfile: function(file) {
+                file.previewElement.parentNode.removeChild(file.previewElement);
+                $.each(listImages, function(i, v) {
+                    if (v.FileName == file.name) {
+                        listImages.splice(i, 1);
+                        return false;
+                    }
+                });
+
+                $('input[name^="Images"]').remove();
+                $.each(listImages, function(i, v) {
+                    $form.append('<input type="hidden" name="Images[' + i + '].ProductImageID" value="' + v.ProductImageID + '" />');
+                    $form.append('<input type="hidden" name="Images[' + i + '].FileName" value="' + v.FileName + '" />');
+                    $form.append('<input type="hidden" name="Images[' + i + '].ImageUrl" value="' + v.ImageUrl + '" />');
+                });
+            }
+        });
+
+        $('#frmAddEditProduct').on('submit', function() {
+            $('#Description').val(desc.getData());
+        });
+    });
+
+    //function commaSeparateNumber(val){
+    //    while (/(\d+)(\d{3})/.test(val.toString())){
+    //        val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+    //    }
+    //    return val;
+    //}
+</script>

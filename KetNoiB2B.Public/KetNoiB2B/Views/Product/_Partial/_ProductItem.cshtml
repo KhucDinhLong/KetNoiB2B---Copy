@@ -1,0 +1,49 @@
+﻿@using KetNoiB2B.Utils
+
+@model SETA.Entity.Product
+@{
+    Layout = null;
+}
+
+@if (Model != null && Model.ProductID > 0)
+{
+    <div class="product-item-container col-md-4 col-sm-6">
+        <div class="product">
+            <div class="image">
+                <a href="/Product/Detail/@Model.ProductID">
+                    <img src="@WebUtils.GetImagePath(Model.FirstImage)" alt="@Model.ProductName" class="img-responsive image1">
+                </a>
+            </div>
+
+            <div class="text">
+                <h3>
+                    <a href="/Product/Detail/@Model.ProductID">@Model.ProductName</a>
+                </h3>
+                <p class="price">
+                    @if (Model.PriceReal > Model.PriceRealMin && Model.PriceRealMin > 0)
+                    {
+                        <del>@Model.PriceReal.ToString("###,###") VND</del>
+                        @Model.PriceRealMin.ToString("###,### VND")
+                    }
+                    else
+                    {
+                        if (Model.PriceReal > 0)
+                        {
+                            @Model.PriceReal.ToString("###,### VND")
+                        }
+                        else if (Model.PriceRealMin > 0)
+                        {
+                            @Model.PriceRealMin.ToString("###,### VND")
+                        }
+                    }                    
+                </p>
+                <p class="buttons">
+                    <a href="/Product/Detail/@Model.ProductID" class="btn btn-default">Xem chi tiết</a>
+                    <a href="javascript:void(0)" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Đặt hàng</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+}
+

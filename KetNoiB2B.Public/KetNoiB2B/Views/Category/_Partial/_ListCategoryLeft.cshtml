@@ -1,0 +1,50 @@
+﻿
+@model List<SETA.Entity.Category>
+@{
+    Layout = null;
+    var activeCategoryId = ViewBag.ActiveCategory ?? 0;
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="panel panel-default sidebar-menu">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">Danh mục </h3>
+        </div>
+
+        <div class="panel-body">
+
+            <ul class="nav nav-pills nav-stacked category-menu">
+
+                @foreach (var category in Model)
+                {
+                    if (category.CategoryID == activeCategoryId)
+                    {
+                        <li class="active">
+                            <a href="/Category/Index/@category.CategoryID">@category.CategoryName
+                                @if (@category.NumberProduct > 0)
+                                {
+                                    <span class="badge pull-right">@category.NumberProduct</span>
+                                }                                
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="/Category/Index/@category.CategoryID">@category.CategoryName
+                                @if (@category.NumberProduct > 0)
+                                {
+                                    <span class="badge pull-right">@category.NumberProduct</span>
+                                }
+                            </a>
+                        </li>
+                    }
+                }
+                               
+            </ul>
+
+        </div>
+    </div>
+}

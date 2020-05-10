@@ -1,0 +1,75 @@
+﻿
+@model SETA.Entity.Category
+@{
+    ViewBag.Title = "Kết nối B2B";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model != null && Model.CategoryID > 0)
+{
+    <div id="heading-breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1>@Model.CategoryName</h1>
+                </div>
+                <div class="col-md-5">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="/Home">Home</a>
+                        </li>
+                        <li>@Model.CategoryName</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="container">
+
+            <div class="row">
+                
+                <div class="col-sm-3">
+                    @{Html.RenderAction("ListCategoryLeft", "Category", new { activeCategoryId = Model.CategoryID });}
+                </div>
+
+                <div class="col-sm-9">
+                    <p class="text-muted lead">@Model.Description</p>
+
+                    <div id="list-product-category-page">
+                        @{Html.RenderAction("GetProductByCategoryId", "Product", new { categoryId = Model.CategoryID, pageNum = 1, pageSize = 6 });}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+}
+                        
+@section script{
+    <script>
+        function getPageProduct(categoryId, page) {
+            var $listproduct = $('#list-product-category-page');
+            var pageSize = 6;
+            $.ajax({
+                url: '/Product/GetProductByCategoryId',
+                data: {
+                    categoryId: categoryId,
+                    pageNum: page,
+                    pageSize: pageSize
+                },
+                dataType: 'html',
+                success: function (result) {
+                    $listproduct.html(result);                    
+                },
+                error: function (jqXHR, textStatus) {
+                    console.error(textStatus);
+                }
+            });
+        }
+    </script>
+}

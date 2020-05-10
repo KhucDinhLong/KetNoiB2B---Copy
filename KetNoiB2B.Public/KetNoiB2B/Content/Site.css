@@ -1,0 +1,25 @@
+﻿img.img-responsive.home-img-list-newest {
+    width: 380px;
+    height: 285px;
+}
+
+img.img-responsive.home-img-featured {
+    width: 555px;
+}
+
+img.img-responsive.home-img-carousel {
+    width: 652px;
+    height: 384px;
+}
+
+.product .image {
+    height: 200px !important;
+}
+
+.product .text {
+    height: 135px;
+}
+
+.loading-ajax-div {
+    margin-bottom: 50px;
+}

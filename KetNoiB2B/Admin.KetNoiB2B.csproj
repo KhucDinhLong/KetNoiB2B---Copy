@@ -1,0 +1,2175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F06BA28-F9DF-43F7-8092-62756B23DDD6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KetNoiB2B</RootNamespace>
+    <AssemblyName>KetNoiB2B</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\..\..\..\AllSourceCode\TeacherZone\Libs\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FileUploaderController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Home\LoginModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Product\CategoryModel.cs" />
+    <Compile Include="Models\Product\IndexModel.cs" />
+    <Compile Include="Models\Product\ProductModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utils\WebUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\nprogress.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\media.jpg" />
+    <Content Include="img\picture.jpg" />
+    <Content Include="Scripts\base\custom.min.js" />
+    <Content Include="Scripts\base\pinJs.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\AdminKetNoiB2B.Ftp.pubxml" />
+    <None Include="Properties\PublishProfiles\AdminKetNoiB2B.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\controller\loginController.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\plugins\alertifyjs\alertify.js" />
+    <Content Include="Scripts\plugins\alertifyjs\alertify.min.js" />
+    <Content Include="Scripts\plugins\alertifyjs\css\alertify.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\alertify.min.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\alertify.rtl.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\alertify.rtl.min.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\bootstrap.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\bootstrap.min.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\bootstrap.rtl.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\bootstrap.rtl.min.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\default.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\default.min.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\default.rtl.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\default.rtl.min.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\semantic.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\semantic.min.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\semantic.rtl.css" />
+    <Content Include="Scripts\plugins\alertifyjs\css\themes\semantic.rtl.min.css" />
+    <Content Include="Scripts\plugins\animate.css\animate.css" />
+    <Content Include="Scripts\plugins\animate.css\animate.min.css" />
+    <Content Include="Scripts\plugins\animate.css\gulpfile.js" />
+    <Content Include="Scripts\plugins\autosize\build.js" />
+    <Content Include="Scripts\plugins\blockUI\jquery.blockUI.js" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\demo.html" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\drp.png" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\package.js" />
+    <Content Include="Scripts\plugins\bootstrap-progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="Scripts\plugins\Chart.js\dist\Chart.bundle.js" />
+    <Content Include="Scripts\plugins\Chart.js\dist\Chart.bundle.min.js" />
+    <Content Include="Scripts\plugins\Chart.js\dist\Chart.js" />
+    <Content Include="Scripts\plugins\Chart.js\dist\Chart.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-af-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-AE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-BH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-DZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-EG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-IQ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-JO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-KW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-LB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-LY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-MA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-OM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-QA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-SA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-SY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-TN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ar-YE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-az-Cyrl-AZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-az-Latn-AZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-be-BY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-bg-BG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-bs-Latn-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ca-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-cs-CZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-cy-GB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-da-DK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-de-AT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-de-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-de-DE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-de-LI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-de-LU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-dv-MV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-el-GR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-029.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-AU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-BZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-CA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-GB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-IE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-JM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-NZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-PH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-TT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-US.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-en-ZW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-AR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-BO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-CL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-CO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-CR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-DO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-EC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-GT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-HN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-MX.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-NI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-PA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-PE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-PR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-PY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-SV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-UY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-es-VE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-et-EE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-eu-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fa-IR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fi-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fo-FO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fr-BE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fr-CA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fr-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fr-FR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fr-LU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-fr-MC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-gl-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-gu-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-he-IL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-hi-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-hr-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-hr-HR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-hu-HU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-hy-AM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-id-ID.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-is-IS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-it-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-it-IT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ja-JP.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ka-GE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-kk-KZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-kn-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ko-KR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-kok-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ky-KG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-lt-LT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-lv-LV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-mi-NZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-mk-MK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-mn-MN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-mr-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ms-BN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ms-MY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-mt-MT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-nb-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-nl-BE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-nl-NL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-nn-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ns-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-pa-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-pl-PL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-pt-BR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-pt-PT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-quz-BO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-quz-EC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-quz-PE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ro-RO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ru-RU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sa-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-se-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-se-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-se-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sk-SK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sl-SI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sma-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sma-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-smj-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-smj-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-smn-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sms-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sq-AL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sr-Cyrl-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sr-Cyrl-CS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sr-Latn-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sr-Latn-CS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sv-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sv-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-sw-KE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-syr-SY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ta-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-te-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-th-TH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-tn-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-tr-TR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-tt-RU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-uk-UA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-ur-PK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-uz-Cyrl-UZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-uz-Latn-UZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-vi-VN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-xh-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-zh-CN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-zh-HK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-zh-MO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-zh-SG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-zh-TW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date-zu-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\date.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\af-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-AE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-BH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-DZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-EG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-IQ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-JO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-KW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-LB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-LY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-MA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-OM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-QA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-SA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-SY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-TN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ar-YE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\az-Cyrl-AZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\az-Latn-AZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\be-BY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\bg-BG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\bs-Latn-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ca-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\cs-CZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\cy-GB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\da-DK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\de-AT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\de-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\de-DE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\de-LI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\de-LU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\dv-MV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\el-GR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-029.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-AU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-BZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-CA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-GB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-IE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-JM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-NZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-PH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-TT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\en-ZW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-AR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-BO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-CL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-CO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-CR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-DO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-EC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-GT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-HN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-MX.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-NI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-PA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-PE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-PR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-PY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-SV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-UY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\es-VE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\et-EE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\eu-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fa-IR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fi-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fo-FO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fr-BE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fr-CA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fr-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fr-FR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fr-LU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\fr-MC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\gl-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\gu-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\he-IL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\hi-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\hr-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\hr-HR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\hu-HU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\hy-AM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\id-ID.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\is-IS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\it-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\it-IT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ja-JP.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ka-GE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\kk-KZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\kn-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ko-KR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\kok-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ky-KG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\lt-LT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\lv-LV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\mi-NZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\mk-MK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\mn-MN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\mr-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ms-BN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ms-MY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\mt-MT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\nb-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\nl-BE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\nl-NL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\nn-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ns-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\pa-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\pl-PL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\pt-BR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\pt-PT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\quz-BO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\quz-EC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\quz-PE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ro-RO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ru-RU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sa-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\se-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\se-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\se-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sk-SK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sl-SI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sma-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sma-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\smj-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\smj-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\smn-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sms-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sq-AL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sr-Cyrl-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sr-Cyrl-CS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sr-Latn-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sr-Latn-CS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sv-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sv-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\sw-KE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\syr-SY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ta-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\te-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\th-TH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\tn-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\tr-TR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\tt-RU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\uk-UA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\ur-PK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\uz-Cyrl-UZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\uz-Latn-UZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\vi-VN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\xh-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\zh-CN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\zh-HK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\zh-MO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\zh-SG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\zh-TW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\i18n\zu-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-af-ZA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-AE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-BH.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-DZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-EG.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-IQ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-JO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-KW.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-LB.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-LY.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-MA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-OM.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-QA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-SA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-SY.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-TN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ar-YE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-az-Cyrl-AZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-az-Latn-AZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-be-BY.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-bg-BG.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-bs-Latn-BA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ca-ES.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-cs-CZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-cy-GB.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-da-DK.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-de-AT.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-de-CH.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-de-DE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-de-LI.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-de-LU.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-dv-MV.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-el-GR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-029.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-AU.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-BZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-CA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-GB.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-IE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-JM.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-NZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-PH.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-TT.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-US.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-ZA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-en-ZW.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-AR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-BO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-CL.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-CO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-CR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-DO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-EC.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-ES.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-GT.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-HN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-MX.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-NI.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-PA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-PE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-PR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-PY.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-SV.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-UY.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-es-VE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-et-EE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-eu-ES.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fa-IR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fi-FI.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fo-FO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fr-BE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fr-CA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fr-CH.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fr-FR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fr-LU.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-fr-MC.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-gl-ES.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-gu-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-he-IL.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-hi-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-hr-BA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-hr-HR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-hu-HU.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-hy-AM.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-id-ID.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-is-IS.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-it-CH.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-it-IT.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ja-JP.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ka-GE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-kk-KZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-kn-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ko-KR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-kok-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ky-KG.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-lt-LT.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-lv-LV.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-mi-NZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-mk-MK.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-mn-MN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-mr-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ms-BN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ms-MY.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-mt-MT.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-nb-NO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-nl-BE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-nl-NL.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-nn-NO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ns-ZA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-pa-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-pl-PL.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-pt-BR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-pt-PT.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-quz-BO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-quz-EC.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-quz-PE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ro-RO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ru-RU.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sa-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-se-FI.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-se-NO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-se-SE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sk-SK.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sl-SI.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sma-NO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sma-SE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-smj-NO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-smj-SE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-smn-FI.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sms-FI.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sq-AL.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sr-Cyrl-BA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sr-Cyrl-CS.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sr-Latn-BA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sr-Latn-CS.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sv-FI.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sv-SE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-sw-KE.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-syr-SY.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ta-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-te-IN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-th-TH.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-tn-ZA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-tr-TR.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-tt-RU.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-uk-UA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-ur-PK.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-uz-Cyrl-UZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-uz-Latn-UZ.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-vi-VN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-xh-ZA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-zh-CN.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-zh-HK.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-zh-MO.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-zh-SG.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-zh-TW.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date-zu-ZA.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\date.min.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\af-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-AE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-BH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-DZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-EG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-IQ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-JO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-KW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-LB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-LY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-MA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-OM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-QA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-SA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-SY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-TN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ar-YE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\az-Cyrl-AZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\az-Latn-AZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\be-BY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\bg-BG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\bs-Latn-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ca-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\cs-CZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\cy-GB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\da-DK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\de-AT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\de-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\de-DE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\de-LI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\de-LU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\dv-MV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\el-GR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-029.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-AU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-BZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-CA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-GB.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-IE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-JM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-NZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-PH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-TT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\en-ZW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-AR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-BO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-CL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-CO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-CR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-DO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-EC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-GT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-HN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-MX.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-NI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-PA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-PE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-PR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-PY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-SV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-UY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\es-VE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\et-EE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\eu-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fa-IR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fi-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fo-FO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fr-BE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fr-CA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fr-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fr-FR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fr-LU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\fr-MC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\gl-ES.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\gu-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\he-IL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\hi-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\hr-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\hr-HR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\hu-HU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\hy-AM.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\id-ID.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\is-IS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\it-CH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\it-IT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ja-JP.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ka-GE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\kk-KZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\kn-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ko-KR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\kok-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ky-KG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\lt-LT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\lv-LV.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\mi-NZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\mk-MK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\mn-MN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\mr-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ms-BN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ms-MY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\mt-MT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\nb-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\nl-BE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\nl-NL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\nn-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ns-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\pa-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\pl-PL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\pt-BR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\pt-PT.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\quz-BO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\quz-EC.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\quz-PE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ro-RO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ru-RU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sa-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\se-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\se-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\se-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sk-SK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sl-SI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sma-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sma-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\smj-NO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\smj-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\smn-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sms-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sq-AL.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sr-Cyrl-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sr-Cyrl-CS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sr-Latn-BA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sr-Latn-CS.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sv-FI.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sv-SE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\sw-KE.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\syr-SY.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ta-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\te-IN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\th-TH.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\tn-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\tr-TR.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\tt-RU.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\uk-UA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\ur-PK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\uz-Cyrl-UZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\uz-Latn-UZ.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\vi-VN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\xh-ZA.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\zh-CN.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\zh-HK.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\zh-MO.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\zh-SG.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\zh-TW.js" />
+    <Content Include="Scripts\plugins\DateJS\build\production\i18n\zu-ZA.js" />
+    <Content Include="Scripts\plugins\dropzone\dist\basic.css" />
+    <Content Include="Scripts\plugins\dropzone\dist\dropzone-amd-module.js" />
+    <Content Include="Scripts\plugins\dropzone\dist\dropzone.css" />
+    <Content Include="Scripts\plugins\dropzone\dist\dropzone.js" />
+    <Content Include="Scripts\plugins\dropzone\dist\min\basic.min.css" />
+    <Content Include="Scripts\plugins\dropzone\dist\min\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\plugins\dropzone\dist\min\dropzone.min.css" />
+    <Content Include="Scripts\plugins\dropzone\dist\min\dropzone.min.js" />
+    <Content Include="Scripts\plugins\fastclick\fastclick.js" />
+    <Content Include="Scripts\plugins\flot-spline\js\jquery.flot.spline.js" />
+    <Content Include="Scripts\plugins\flot-spline\js\jquery.flot.spline.min.js" />
+    <Content Include="Scripts\plugins\flot.curvedlines\curvedLines.js" />
+    <Content Include="Scripts\plugins\flot.orderbars\js\jquery.flot.orderBars.js" />
+    <Content Include="Scripts\plugins\Flot\jquery.flot.js" />
+    <Content Include="Scripts\plugins\Flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\plugins\Flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\plugins\Flot\jquery.flot.stack.js" />
+    <Content Include="Scripts\plugins\Flot\jquery.flot.time.js" />
+    <Content Include="Scripts\plugins\gauge.js\dist\gauge.js" />
+    <Content Include="Scripts\plugins\gauge.js\dist\gauge.min.js" />
+    <Content Include="Scripts\plugins\iCheck\icheck.min.js" />
+    <Content Include="Scripts\plugins\iCheck\skins\all.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\aero.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\aero.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\blue.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\blue.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\flat.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\flat.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\green%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\green.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\green.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\grey.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\grey.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\orange.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\orange.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\pink.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\pink.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\purple.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\purple.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\red%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\red.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\red.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\yellow.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\yellow.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\flat\_all.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\futurico\futurico.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\futurico\futurico.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\aero.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\blue.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\green.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\grey.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\line%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\line.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\line.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\orange.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\pink.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\purple.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\red.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\yellow.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\line\_all.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\aero.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\aero.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\blue.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\blue.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\green.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\green.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\grey.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\grey.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\minimal.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\minimal.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\orange.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\orange.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\pink.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\pink.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\purple.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\purple.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\red.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\red.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\yellow.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\yellow.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\minimal\_all.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\polaris\polaris.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\polaris\polaris.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\aero%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\aero.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\aero.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\blue%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\blue.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\blue.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\green%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\green.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\green.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\grey%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\grey.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\grey.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\orange%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\orange.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\orange.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\pink%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\pink.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\pink.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\purple%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\purple.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\purple.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\red%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\red.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\red.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\square%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\square.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\square.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\yellow.css" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\yellow.png" />
+    <Content Include="Scripts\plugins\iCheck\skins\square\_all.css" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\inputmask\inputmask.date.extensions.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\inputmask\inputmask.dependencyLib.jquery.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\inputmask\inputmask.extensions.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\inputmask\inputmask.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\inputmask\inputmask.numeric.extensions.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\inputmask\inputmask.phone.extensions.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\inputmask\inputmask.regex.extensions.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\inputmask\jquery.inputmask.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\jquery.inputmask.bundle.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\inputmask\inputmask.date.extensions.min.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\inputmask\inputmask.dependencyLib.jquery.min.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\inputmask\inputmask.extensions.min.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\inputmask\inputmask.min.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\inputmask\inputmask.numeric.extensions.min.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\inputmask\inputmask.phone.extensions.min.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\inputmask\inputmask.regex.extensions.min.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\inputmask\jquery.inputmask.min.js" />
+    <Content Include="Scripts\plugins\jquery.inputmask\dist\min\jquery.inputmask.bundle.min.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\jquery.vmap.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\jquery.vmap.min.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\jqvmap.css" />
+    <Content Include="Scripts\plugins\jqvmap\dist\jqvmap.min.css" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\continents\jquery.vmap.africa.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\continents\jquery.vmap.asia.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\continents\jquery.vmap.australia.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\continents\jquery.vmap.europe.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\continents\jquery.vmap.north-america.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\continents\jquery.vmap.south-america.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.algeria.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.argentina.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.brazil.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.canada.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.europe.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.france.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.germany.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.greece.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.iran.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.iraq.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.russia.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.tunisia.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.turkey.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.usa.js" />
+    <Content Include="Scripts\plugins\jqvmap\dist\maps\jquery.vmap.world.js" />
+    <Content Include="Scripts\plugins\jqvmap\examples\algeria.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\argentina.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\brazil.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\continents.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\europe.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\france.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\germany.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\greece.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\background.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\flag.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\globe.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\black.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\blue.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\green.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\grey.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\orange.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\purple.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\red.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\white.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\marker\yellow.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\thumb.jpg" />
+    <Content Include="Scripts\plugins\jqvmap\examples\images\tip.png" />
+    <Content Include="Scripts\plugins\jqvmap\examples\inactive_regions.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\iran.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\iraq.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\js\jquery.vmap.sampledata.js" />
+    <Content Include="Scripts\plugins\jqvmap\examples\labels.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\mobile.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\multi.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\pins.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\pins_custom.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\responsive.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\russia.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\touch_detect.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\tunisia.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\turkey.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\usa.html" />
+    <Content Include="Scripts\plugins\jqvmap\examples\world.html" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Black\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\BlueOpal\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Bootstrap\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Default\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Flat\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\HighContrast\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\images\back.png" />
+    <Content Include="Scripts\plugins\kendoui\css\images\kendoui.svg" />
+    <Content Include="Scripts\plugins\kendoui\css\images\wp8_icons.png" />
+    <Content Include="Scripts\plugins\kendoui\css\images\wp8_inverseicons.png" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.black.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.black.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.blueopal.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.blueopal.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.bootstrap.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.bootstrap.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.common-bootstrap.core.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.common-bootstrap.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.common.core.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.common.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.black.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.blueopal.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.default.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.flat.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.highcontrast.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.metro.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.metroblack.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.moonlight.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.silver.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.dataviz.uniform.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.default.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.default.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.flat.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.flat.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.highcontrast.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.highcontrast.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.metro.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.metro.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.metroblack.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.metroblack.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.all.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.android.dark.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.android.light.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.blackberry.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.common.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.flat.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.ios.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.meego.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.mobile.wp8.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.moonlight.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.moonlight.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.rtl.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.silver.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.silver.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.uniform.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\kendo.uniform.mobile.min.css" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\MetroBlack\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Metro\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Moonlight\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Silver\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\brushed-metal.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots1.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots10.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots11.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots12.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots13.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots2.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots3.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots4.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots5.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots6.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots7.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots8.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\dots9.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\glass-lighter.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\glass.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\highlight.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\hsv-gradient.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\hue.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\leather1.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\leather2.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\noise.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\stripe1.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\stripe2.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\stripe3.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\stripe4.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\stripe5.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\stripe6.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\transparency.png" />
+    <Content Include="Scripts\plugins\kendoui\css\textures\transtexture.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\editor.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\imagebrowser.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\indeterminate.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\loading-image.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\loading.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\loading_2x.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\markers.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\markers_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\slider-h.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\slider-v.gif" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\sprite.png" />
+    <Content Include="Scripts\plugins\kendoui\css\Uniform\sprite_2x.png" />
+    <Content Include="Scripts\plugins\kendoui\js\angular.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.af-ZA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.af.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.am-ET.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.am.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-AE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-BH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-DZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-EG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-IQ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-JO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-KW.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-LB.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-LY.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-MA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-OM.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-QA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-SA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-SY.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-TN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar-YE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ar.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.arn-CL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.arn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.as-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.as.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.az-Cyrl-AZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.az-Cyrl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.az-Latn-AZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.az-Latn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.az.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ba-RU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ba.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.be-BY.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.be.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bg.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bn-BD.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bn-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bo-CN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bo.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.br-FR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.br.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bs-Cyrl-BA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bs-Cyrl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bs-Latn-BA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bs-Latn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.bs.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ca-ES.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ca.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.co-FR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.co.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.cs-CZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.cs.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.cy-GB.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.cy.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.da-DK.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.da.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.de-AT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.de-CH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.de-DE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.de-LI.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.de-LU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.de.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.dsb-DE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.dsb.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.dv-MV.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.dv.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.el-GR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.el.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-AU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-BZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-CA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-GB.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-IE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-JM.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-NZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-PH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-SG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-TT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-ZA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en-ZW.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.en.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-BO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-CL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-CO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-CR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-DO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-EC.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-GT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-HN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-MX.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-NI.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-PA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-PE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-PR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-PY.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-SV.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-UY.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es-VE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.es.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.et-EE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.et.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.eu-ES.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.eu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fa-IR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fa.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fi-FI.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fi.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fil-PH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fil.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fo-FO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fo.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fr-BE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fr-CA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fr-CH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fr-FR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fr-LU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fr-MC.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fr.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fy-NL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.fy.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ga-IE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ga.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.gd-GB.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.gd.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.gl-ES.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.gl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.gsw-FR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.gsw.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.gu-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.gu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ha-Latn-NG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ha-Latn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ha.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.he-IL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.he.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hi-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hi.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hr-BA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hr-HR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hr.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hsb-DE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hsb.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hu-HU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hy-AM.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.hy.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.id-ID.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.id.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ig-NG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ig.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ii-CN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ii.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.is-IS.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.is.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.it-CH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.it-IT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.it.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.iu-Cans-CA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.iu-Cans.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.iu-Latn-CA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.iu-Latn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.iu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ja-JP.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ja.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ka-GE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ka.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.kk-KZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.kk.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.kl-GL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.kl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.km-KH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.km.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.kn-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.kn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ko-KR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ko.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.kok-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.kok.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ky-KG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ky.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.lb-LU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.lb.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.lo-LA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.lo.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.lt-LT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.lt.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.lv-LV.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.lv.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mi-NZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mi.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mk-MK.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mk.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ml-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ml.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mn-Cyrl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mn-MN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mn-Mong-CN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mn-Mong.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.moh-CA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.moh.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mr-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mr.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ms-BN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ms.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mt-MT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.mt.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nb-NO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nb.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ne-NP.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ne.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nl-BE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nn-NO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.no.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nso-ZA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.nso.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.oc-FR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.oc.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.or-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.or.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.pa-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.pa.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.pl-PL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.pl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.prs-AF.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.prs.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ps-AF.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ps.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.pt-BR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.pt-PT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.pt.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.qut-GT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.qut.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.quz-BO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.quz-EC.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.quz-PE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.quz.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.rm-CH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.rm.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ro-RO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ro.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ru-RU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ru-UA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ru.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.rw-RW.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.rw.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sa-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sa.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sah-RU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sah.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.se-FI.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.se-NO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.se-SE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.se.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.si-LK.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.si.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sk-SK.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sk.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sl-SI.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sma-NO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sma-SE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sma.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.smj-NO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.smj-SE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.smj.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.smn-FI.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.smn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sms-FI.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sms.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sq-AL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sq.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Cyrl-BA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Cyrl-CS.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Cyrl-ME.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Cyrl-RS.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Cyrl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Latn-BA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Latn-CS.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Latn-ME.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Latn-RS.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr-Latn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sr.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sv-FI.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sv-SE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sv.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sw-KE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.sw.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.syr-SY.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.syr.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ta-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ta.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.te-IN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.te.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tg-Cyrl-TJ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tg-Cyrl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tg.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.th-TH.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.th.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tk-TM.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tk.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tn-ZA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tr-TR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tr.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tt-RU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tt.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tzm-Latn-DZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tzm-Latn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.tzm.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ug-CN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ug.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.uk-UA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.uk.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ur-PK.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.ur.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.uz-Cyrl-UZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.uz-Cyrl.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.uz-Latn-UZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.uz-Latn.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.uz.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.vi-VN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.vi.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.wo-SN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.wo.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.xh-ZA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.xh.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.yo-NG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.yo.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-CHS.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-CHT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-HK.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-MO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-SG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh-TW.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zh.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zu-ZA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\cultures\kendo.culture.zu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\jquery.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.all.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.all.min_old.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.angular.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.binder.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.button.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.calendar.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.colorpicker.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.columnmenu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.columnsorter.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.combobox.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.core.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.data.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.data.odata.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.data.signalr.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.data.xml.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.barcode.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.canvas.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.chart.funnel.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.chart.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.chart.polar.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.core.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.diagram.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.drawing.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.gauge.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.map.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.mobile.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.qrcode.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.sparkline.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.stock.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.svg.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.themes.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.treemap.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.vml.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.datepicker.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dom.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.editable.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.editor.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.filebrowser.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.filtercell.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.filtermenu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.fx.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.gantt.list.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.gantt.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.gantt.timeline.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.grid.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.groupable.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.imagebrowser.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.list.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.listview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.maskedtextbox.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.menu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.application.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.button.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.drawer.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.listview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.loader.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.modalview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.navbar.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.pane.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.popover.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.scrollview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.shim.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.splitview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.switch.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.view.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.multiselect.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.notification.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.pager.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.panelbar.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.pivot.configurator.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.pivot.fieldmenu.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.pivotgrid.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.popup.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.progressbar.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.reorderable.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.resizable.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.router.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.agendaview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.dayview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.monthview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.recurrence.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.view.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.selectable.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.slider.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.sortable.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.splitter.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.timepicker.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.timezones.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.toolbar.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.tooltip.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.touch.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.treeview.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.upload.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.userevents.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.validator.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.view.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.web.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.window.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.bg-BG.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.cs-CZ.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.da-DK.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.de-DE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.en-US.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.es-ES.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.fr-FR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.it-IT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.nl-NL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.pl-PL.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.pt-BR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.pt-PT.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.ro-RO.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.ru-RU.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.sv-SE.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.tr-TR.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.uk-UA.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.zh-CN.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.zh-HK.min.js" />
+    <Content Include="Scripts\plugins\kendoui\js\messages\kendo.messages.zh-TW.min.js" />
+    <Content Include="Scripts\plugins\moment\min\locales.js" />
+    <Content Include="Scripts\plugins\moment\min\locales.min.js" />
+    <Content Include="Scripts\plugins\moment\min\moment-with-locales.js" />
+    <Content Include="Scripts\plugins\moment\min\moment-with-locales.min.js" />
+    <Content Include="Scripts\plugins\moment\min\moment.min.js" />
+    <Content Include="Scripts\plugins\moment\min\tests.js" />
+    <Content Include="Scripts\plugins\noty\jquery.noty.js" />
+    <Content Include="Scripts\plugins\noty\layouts\bottom.js" />
+    <Content Include="Scripts\plugins\noty\layouts\bottomCenter.js" />
+    <Content Include="Scripts\plugins\noty\layouts\bottomLeft.js" />
+    <Content Include="Scripts\plugins\noty\layouts\bottomRight.js" />
+    <Content Include="Scripts\plugins\noty\layouts\center.js" />
+    <Content Include="Scripts\plugins\noty\layouts\centerLeft.js" />
+    <Content Include="Scripts\plugins\noty\layouts\centerRight.js" />
+    <Content Include="Scripts\plugins\noty\layouts\inline.js" />
+    <Content Include="Scripts\plugins\noty\layouts\top.js" />
+    <Content Include="Scripts\plugins\noty\layouts\topCenter.js" />
+    <Content Include="Scripts\plugins\noty\layouts\topLeft.js" />
+    <Content Include="Scripts\plugins\noty\layouts\topRight.js" />
+    <Content Include="Scripts\plugins\noty\promise.js" />
+    <Content Include="Scripts\plugins\noty\themes\default.js" />
+    <Content Include="Scripts\plugins\nprogress\nprogress.js" />
+    <Content Include="Scripts\plugins\skycons\skycons.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Scripts\plugins\animate.css\.bower.json" />
+    <Content Include="Scripts\plugins\animate.css\animate-config.json" />
+    <Content Include="Scripts\plugins\animate.css\bower.json" />
+    <Content Include="Scripts\plugins\animate.css\package.json" />
+    <Content Include="Scripts\plugins\autosize\.bower.json" />
+    <Content Include="Scripts\plugins\autosize\.gitignore" />
+    <Content Include="Scripts\plugins\autosize\bower.json" />
+    <Content Include="Scripts\plugins\autosize\changelog.md" />
+    <Content Include="Scripts\plugins\autosize\LICENSE.md" />
+    <Content Include="Scripts\plugins\autosize\package.json" />
+    <Content Include="Scripts\plugins\autosize\readme.md" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\.bower.json" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\bower.json" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\daterangepicker.scss" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\package.json" />
+    <Content Include="Scripts\plugins\bootstrap-daterangepicker\README.md" />
+    <Content Include="Scripts\plugins\gauge.js\dist\gauge.coffee" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
+    <Content Include="Scripts\plugins\kendoui\css\images\KendoUI.ttf" />
+    <Content Include="Scripts\plugins\kendoui\css\images\KendoUI.woff" />
+    <Content Include="Scripts\plugins\kendoui\js\angular.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\jquery.min.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.all.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.all.min.js_old.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.angular.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.autocomplete.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.binder.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.button.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.calendar.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.colorpicker.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.columnmenu.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.columnsorter.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.combobox.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.core.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.data.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.data.odata.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.data.signalr.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.data.xml.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.barcode.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.canvas.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.chart.funnel.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.chart.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.chart.polar.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.core.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.diagram.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.drawing.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.gauge.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.map.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.mobile.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.qrcode.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.sparkline.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.stock.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.svg.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.themes.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.treemap.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dataviz.vml.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.datepicker.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.datetimepicker.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dom.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.draganddrop.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.dropdownlist.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.editable.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.editor.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.filebrowser.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.filtercell.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.filtermenu.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.fx.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.gantt.list.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.gantt.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.gantt.timeline.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.grid.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.groupable.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.imagebrowser.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.list.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.listview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.maskedtextbox.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.menu.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.actionsheet.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.application.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.button.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.buttongroup.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.drawer.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.listview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.loader.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.modalview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.navbar.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.pane.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.popover.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.scroller.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.scrollview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.shim.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.splitview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.switch.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.tabstrip.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.mobile.view.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.multiselect.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.notification.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.numerictextbox.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.pager.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.panelbar.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.pivot.configurator.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.pivot.fieldmenu.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.pivotgrid.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.popup.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.progressbar.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.reorderable.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.resizable.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.router.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.agendaview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.dayview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.monthview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.recurrence.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.scheduler.view.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.selectable.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.slider.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.sortable.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.splitter.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.tabstrip.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.timepicker.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.toolbar.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.tooltip.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.touch.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.treeview.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.upload.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.userevents.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.validator.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.view.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.web.min.js.map" />
+    <Content Include="Scripts\plugins\kendoui\js\kendo.window.min.js.map" />
+    <Content Include="Views\Product\AddCategory.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_Partial\_DropdownCategory.cshtml" />
+    <Content Include="Views\Product\_Partial\_AddProduct.cshtml" />
+    <Content Include="Scripts\plugins\dropzone\.bower.json" />
+    <Content Include="Scripts\plugins\dropzone\bower.json" />
+    <Content Include="Scripts\plugins\dropzone\dist\readme.md" />
+    <Content Include="Views\Product\_Partial\_ProductItem.cshtml" />
+    <Content Include="Views\Product\_Partial\_ListProduct.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\plugins\bootstrap-datetimepicker\" />
+    <Folder Include="Scripts\plugins\bootstrap-wysiwyg\" />
+    <Folder Include="Scripts\plugins\cropper\" />
+    <Folder Include="Scripts\plugins\datatables.net-bs\" />
+    <Folder Include="Scripts\plugins\datatables.net-buttons-bs\" />
+    <Folder Include="Scripts\plugins\datatables.net-buttons\" />
+    <Folder Include="Scripts\plugins\datatables.net-fixedheader-bs\" />
+    <Folder Include="Scripts\plugins\datatables.net-fixedheader\" />
+    <Folder Include="Scripts\plugins\datatables.net-keytable\" />
+    <Folder Include="Scripts\plugins\datatables.net-responsive-bs\" />
+    <Folder Include="Scripts\plugins\datatables.net-responsive\" />
+    <Folder Include="Scripts\plugins\datatables.net-scroller-bs\" />
+    <Folder Include="Scripts\plugins\datatables.net-scroller\" />
+    <Folder Include="Scripts\plugins\datatables.net\" />
+    <Folder Include="Scripts\plugins\devbridge-autocomplete\" />
+    <Folder Include="Scripts\plugins\echarts\" />
+    <Folder Include="Scripts\plugins\eve\" />
+    <Folder Include="Scripts\plugins\font-awesome\" />
+    <Folder Include="Scripts\plugins\fullcalendar\" />
+    <Folder Include="Scripts\plugins\google-code-prettify\" />
+    <Folder Include="Scripts\plugins\ion.rangeSlider\" />
+    <Folder Include="Scripts\plugins\jquery-knob\" />
+    <Folder Include="Scripts\plugins\jquery-mousewheel\" />
+    <Folder Include="Scripts\plugins\jQuery-Smart-Wizard\" />
+    <Folder Include="Scripts\plugins\jquery-sparkline\" />
+    <Folder Include="Scripts\plugins\jquery.easy-pie-chart\" />
+    <Folder Include="Scripts\plugins\jquery.form\" />
+    <Folder Include="Scripts\plugins\jquery.hotkeys\" />
+    <Folder Include="Scripts\plugins\jquery.tagsinput\" />
+    <Folder Include="Scripts\plugins\jquery\" />
+    <Folder Include="Scripts\plugins\jszip\" />
+    <Folder Include="Scripts\plugins\malihu-custom-scrollbar-plugin\" />
+    <Folder Include="Scripts\plugins\mjolnic-bootstrap-colorpicker\" />
+    <Folder Include="Scripts\plugins\mocha\" />
+    <Folder Include="Scripts\plugins\morris.js\" />
+    <Folder Include="Scripts\plugins\normalize-css\" />
+    <Folder Include="Scripts\plugins\parsleyjs\" />
+    <Folder Include="Scripts\plugins\pdfmake\" />
+    <Folder Include="Scripts\plugins\pnotify\" />
+    <Folder Include="Scripts\plugins\raphael\" />
+    <Folder Include="Scripts\plugins\requirejs\" />
+    <Folder Include="Scripts\plugins\select2\" />
+    <Folder Include="Scripts\plugins\starrr\" />
+    <Folder Include="Scripts\plugins\switchery\" />
+    <Folder Include="Scripts\plugins\transitionize\" />
+    <Folder Include="Scripts\plugins\validator\" />
+    <Folder Include="Views\FileUploader\" />
+    <Folder Include="Views\Member\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SETA.BusinessLogic\SETA.BusinessLogic.csproj">
+      <Project>{a2e99c02-6c20-490e-8227-8c88f0c959f9}</Project>
+      <Name>SETA.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SETA.Common\SETA.Common.csproj">
+      <Project>{4d0b7a95-0a6d-4dac-9cfd-4ac04c61f358}</Project>
+      <Name>SETA.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SETA.Core\SETA.Core.csproj">
+      <Project>{94e1c53d-ced4-410e-805b-144284fd2602}</Project>
+      <Name>SETA.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SETA.DataAccess\SETA.DataAccess.csproj">
+      <Project>{be5c3ad6-74ff-4583-930b-30656ac59c4d}</Project>
+      <Name>SETA.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SETA.Entity\SETA.Entity.csproj">
+      <Project>{16e4f023-d367-4e48-b56f-2c37d2f07999}</Project>
+      <Name>SETA.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>34846</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:34846/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

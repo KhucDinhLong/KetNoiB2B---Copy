@@ -1,0 +1,168 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kết nối B2B </title>
+    <!-- Bootstrap -->
+    <link href="/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/Content/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/Content/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="/Content/animate.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="/Content/custom.min.css" rel="stylesheet">
+</head>
+<body class="login">
+<div>
+    <a class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+
+                @using (Html.BeginForm("SignIn", "Member", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {@class = "form-horizontal", id = "frmLogin"}))
+                {
+                    <h1>Login Form</h1>
+                    <div class="form-group">
+                        <h4 id="message" class="error text-center"></h4>
+                    </div>
+                    <div>
+                        @*<input type="text" class="form-control" placeholder="Username" required="" />*@
+                        <input type="text" class="form-control" placeholder="Username" required="" />
+                    </div>
+                    <div>
+                        @*<input type="password" class="form-control" placeholder="Password" required="" />*@
+                        <input type="password" class="form-control" placeholder="Password" required="" />
+                    </div>
+                    <div>
+                        <input type="submit" class="btn btn-default" value="Log in"/>
+                        <a class="reset_pass" href="#">Lost your password?</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="separator">
+                        <p class="change_link">
+                            New to site?
+                            <a href="#signup" class="to_register"> Create Account </a>
+                        </p>
+                        <div class="clearfix"></div>
+                        <br/>
+                        <div>
+                            <h1>
+                                <i class="fa fa-paw"></i> Kết nối B2B
+                            </h1>
+                            <p>©2016 All Rights Reserved. Kết nối B2B! Privacy and Terms</p>
+                        </div>
+                    </div>
+                }
+
+            </section>
+        </div>
+        <div id="register" class="animate form registration_form">
+            <section class="login_content">
+                <form>
+                    <h1>Create Account</h1>
+                    <div>
+                        <input type="text" class="form-control" placeholder="Username" required=""/>
+                    </div>
+                    <div>
+                        <input type="email" class="form-control" placeholder="Email" required=""/>
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Password" required=""/>
+                    </div>
+                    <div>
+                        <a class="btn btn-default submit" href="index.html">Submit</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="separator">
+                        <p class="change_link">
+                            Already a member ?
+                            <a href="#signin" class="to_register"> Log in </a>
+                        </p>
+                        <div class="clearfix"></div>
+                        <br/>
+                        <div>
+                            <h1><i class="fa fa-paw"></i> Gentelella Alela!
+                            </h1>
+                            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+<script language="javascript">
+    var pinJs = pinJs || {};
+</script>
+<script src="~/Scripts/jquery-1.10.2.min.js" language="javascript" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.min.js" language="javascript" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js" language="javascript" type="text/javascript"></script>
+<script src="~/Scripts/plugins/blockUI/jquery.blockUI.js" language="javascript" type="text/javascript"></script>
+<script src="~/Scripts/base/pinJs.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        @{
+            Uri uri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
+            var back = HttpUtility.ParseQueryString(uri.Query).Get("return");
+            if (string.IsNullOrEmpty(back))
+            {
+                back = HttpUtility.ParseQueryString(uri.Query).Get("re");
+            }
+        }
+
+        var $form = $('#frmLogin');
+        var back = "@back";
+
+        $.validator.unobtrusive.parse($form);
+        var validator = $form.data("validator");
+        validator.settings.ignore = ':hidden, .ignore, [readonly=readonly], [src]';
+        validator.settings.submitHandler = function (form) {
+            var postData = $(form).serialize();
+            var formURL = $(form).attr("action");
+            $.ajax(
+            {
+                url: formURL,
+                type: "POST",
+                data: postData,
+                beforeSend: function (xhr, opts) {
+                    window.pinJs.blockUIForLoading();
+                },
+                success: function (data, textStatus, jqXHR) {
+                    if (data == "OK") {
+                        var pageTo = location.protocol + "//" + location.hostname + (window.location.port ? ":" + window.location.port : "");
+                        if (back.length > 0) {
+                            pageTo = pageTo + back;
+                        } else {
+                            pageTo = pageTo + "/Dashboard";
+                        }
+                        window.location.replace(pageTo);
+                    } else {
+                        $("#message").parent().addClass("boxError");
+                        $("#message").html(data);
+                    }
+                    $.unblockUI();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    $.unblockUI();
+                }
+            });
+        };
+        //focus first text box
+        pinJs.focusFirstInputForm($form);
+    });
+</script>
+</body>
+</html>

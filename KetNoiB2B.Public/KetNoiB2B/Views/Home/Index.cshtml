@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "/Views/Shared/_Layout.cshtml";    
+}
+
+@section style{
+    @*@Styles.Render("~/styles/CarouselCss")*@
+}
+
+@*@{ Html.RenderAction("GetProductHomeCarousel", "Product"); }
+
+@{ Html.RenderAction("GetProductHomeFeature", "Product"); }*@
+
+<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h1>Chuyên cung ứng sản phẩm doanh nghiệp</h1>
+            </div>
+            <div class="col-md-3">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/Home">Trang chủ</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-3">
+                LstCategory
+            </div>
+
+            <div class="col-sm-9">
+                <p class="text-muted lead">Các sản phẩm mới nhất</p>
+
+                <div id="list-product-homepage">
+                    lstProduct
+                </div>
+                <div class="loading-ajax-div hidden">
+                    <img src="/img/ajax-loader.gif" alt="loading" class="img-responsive center-block"/>
+                </div>
+                <p></p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+@section script{
+    @*@Scripts.Render("~/bundles/CarouselJs")*@
+    <script type="text/javascript">
+        //$(".img-responsive").on("error", function () {
+        //    $(this).attr('src', '/img/no_thumbnail.jpg');
+        //});
+        var sIndex = 2, offSet = 12, isPreviousEventComplete = true, isDataAvailable = true;
+
+        $(window).scroll(function () {
+            if ($(document).height() - 50 <= $(window).scrollTop() + $(window).height()) {
+                if (isPreviousEventComplete && isDataAvailable) {
+
+                    isPreviousEventComplete = false;
+                    $(".loading-ajax-dive").removeClass('hidden');
+
+                    $.ajax({
+                        type: "GET",
+                        url: '/Product/GetProductHomePageNewest?pageNum=' + sIndex + '&pageSize=' + offSet + '',
+                        success: function (result) {
+                            $("#list-product-homepage").append(result);
+
+                            sIndex = sIndex + 1;
+                            isPreviousEventComplete = true;
+
+                            if (result == '') //When data is not available
+                                isDataAvailable = false;
+
+                            $(".loading-ajax-dive").addClass('hidden');
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+
+                }
+            }
+        });
+    </script>
+}

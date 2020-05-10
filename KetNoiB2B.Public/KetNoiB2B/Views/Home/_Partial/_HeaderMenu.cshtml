@@ -1,0 +1,17 @@
+﻿
+@model List<SETA.Entity.Category>
+@{
+    Layout = null;
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul class="dropdown-menu">
+        @foreach (var category in Model)
+        {
+            <li>
+                <a href="/Category/Index/@category.CategoryID">@category.CategoryName</a>
+            </li>
+        }                
+    </ul>
+}

@@ -1,0 +1,34 @@
+﻿
+.k-animation-container, .k-widget, .k-widget *, .k-animation-container *, .k-widget *:before, .k-animation-container *:after, .k-block .k-header, .k-list-container {
+    box-sizing: inherit !important;
+}
+.k-window-content.k-content .x_panel {
+    width: 100%;
+}
+.input-validation-error, .input-validation-error.form-control:focus {
+    outline: 0 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+    border: 1px solid #ff0000 !important;
+}
+.field-validation-error {
+    display: block;
+    margin-top: 5px;
+    color: #ff0000;
+    font-size: 12px;
+}
+.filter-box-gallery {
+    margin-bottom: 10px;
+}
+#dropZone {
+    background: gray;
+    border: black dashed 3px;
+    width: 200px;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+.dropzone .dz-preview .dz-image img {
+    width: 100%;
+    height: 100%;
+}

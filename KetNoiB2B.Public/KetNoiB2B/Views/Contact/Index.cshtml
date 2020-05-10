@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model KetNoiB2B.Models.Contact.ContactFormModel
+
+<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>Liên hệ</h1>
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/Home">Trang chủ</a>
+                    </li>
+                    <li>Liên hệ</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="content">
+    <div class="container" id="contact">
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <section>
+
+                    <div class="heading">
+                        <h2>Chúng tôi ở đây để giúp bạn</h2>
+                    </div>
+
+                    <p class="lead">
+                        Bạn có thắc mắc điều gì về chúng tôi không? Bạn có những vấn đề gì về sản phẩm của chúng tôi? Chúng tôi luôn cam kết Quý Khách
+                        có những chọn lựa đa dạng nhất, giá luôn là tốt nhất thị trường, nhiều quà tặng, chiết khấu cao. Chúng tôi là một nhà cung cấp
+                        sản phẩm hoàn hảo cho các doanh nghiệp.
+                    </p>
+                    <p>Xin vui lòng liên hệ với chúng tôi, trung tâm dịch vụ khách hàng của chúng tôi đang làm việc cho bạn 24/7.</p>
+
+                    <div class="heading">
+                        <h3>Liên hệ ngay</h3>
+                    </div>
+
+                    @using (Html.BeginForm("SaveFeedback", "Contact", FormMethod.Post, new { id = "frmAddFeedback" }))
+                    {
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="firstname">Họ</label>
+                                    <input type="text" class="form-control" id="firstname">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="lastname">Tên</label>
+                                    <input type="text" class="form-control" id="lastname">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" id="email">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="subject">Tựa đề</label>
+                                    <input type="text" class="form-control" id="subject">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="message">Nội dung</label>
+                                    <textarea id="message" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Gửi phản hồi</button>
+
+                            </div>
+                        </div>
+                    }                   
+
+                </section>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <section>
+
+                    <h3 class="text-uppercase">Địa chỉ</h3>
+
+                    <p>
+                        Công Ty TNHH Xuất Nhập Khẩu Tân Minh Nhật.
+                        <br>7D tổ 52
+                        <br>phường Tương Mai
+                        <br>Quận Hoàng Mai
+                        <br>Hà Nội
+                        <strong>Việt Nam</strong>
+                    </p>
+
+                    <h3 class="text-uppercase">Trung tâm hỗ trợ</h3>
+
+                    <p class="text-muted">Trung tâm dịch vụ khách hàng của chúng tôi đang làm việc cho bạn 24/7.</p>
+                    <p>
+                        <strong>Mr.Dũng</strong> <strong>0903.494.714</strong>
+                    </p>
+
+
+
+                    <h3 class="text-uppercase">Hỗ trợ trực tuyến</h3>
+
+                    <p class="text-muted">Xin vui lòng gửi mail cho chúng tôi khi cần hỗ trợ. Chúng tôi sẽ phản hồi sớm nhất có thể.</p>
+                    <ul>
+                        <li>
+                            <strong><a href="mailto: ceo.hangduan@gmail.com">ceo.hangduan@gmail.com</a></strong>
+                        </li>
+                        @*<li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>*@
+                    </ul>
+
+                </section>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+
+    </div>
+    <!-- /#contact.container -->
+</div>
+
+<div id="map">
+    <iframe width="100%"
+            height="100%"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCWM_sQKC-KzP1f_-ndgl_pRIePP74u-Zo
+    &q=Công+Ty+TNHH+Xuất+Nhập+Khẩu+Tân+Minh+Nhật" allowfullscreen></iframe>
+</div>
+
+@section script{
+    @*API Key: AIzaSyCWM_sQKC-KzP1f_-ndgl_pRIePP74u-Zo*@
+    @*<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCWM_sQKC-KzP1f_-ndgl_pRIePP74u-Zo"></script>
+    @Scripts.Render("~/bundles/GmapJs")*@
+}
+
+
+

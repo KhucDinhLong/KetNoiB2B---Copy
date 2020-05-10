@@ -1,0 +1,140 @@
+﻿
+@using KetNoiB2B.Utils
+@model SETA.Entity.Product
+@{
+    ViewBag.Title = "Chi tiết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model != null && Model.ProductID > 0)
+{
+    <div id="heading-breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1>@Model.ProductName</h1>
+                </div>
+                <div class="col-md-5">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="/Home">Home</a>
+                        </li>
+                        <li>
+                            <a href="/Category/Index/@Model.CategoryID">@Model.CategoryName</a>
+                        </li>
+                        <li>@Model.ProductName</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="lead">
+                        @Model.CategoryDescription
+                    </p>
+                    <p class="goToDescription">
+                        <a href="#details" class="scroll-to text-uppercase">Xem thông tin chi tiết sản phẩm</a>
+                    </p>
+
+                    <div class="row" id="productMain">
+                        <div class="col-sm-6">
+                            <div id="mainImage">
+                                <img src="@WebUtils.GetImagePath(Model.FirstImage)" alt="" class="img-responsive">
+                            </div>
+
+                            <div class="ribbon sale">
+                                <div class="theribbon">GIẢM GIÁ</div>
+                                <div class="ribbon-background"></div>
+                            </div>
+                            <!-- /.ribbon -->
+
+                            <div class="ribbon new">
+                                <div class="theribbon">MỚI</div>
+                                <div class="ribbon-background"></div>
+                            </div>
+                            <!-- /.ribbon -->
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box">
+
+                                <form>
+                                    <div class="sizes">
+
+                                        <h3>@Model.ProductName</h3>
+
+                                        @*<label for="size_s">
+                                                <a href="#">S</a>
+                                                <input type="radio" id="size_s" name="size" value="s" class="size-input">
+                                            </label>
+                                            <label for="size_m">
+                                                <a href="#">M</a>
+                                                <input type="radio" id="size_m" name="size" value="m" class="size-input">
+                                            </label>
+                                            <label for="size_l">
+                                                <a href="#">L</a>
+                                                <input type="radio" id="size_l" name="size" value="l" class="size-input">
+                                            </label>*@
+                                    </div>
+
+                                    <p class="price">@Model.PriceRealMin.ToString("####,###") VND</p>
+
+                                    @*<p class="text-center">
+                                            <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+                                            <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </p>*@
+
+                                </form>
+                            </div>
+
+                            <div class="row" id="thumbs">
+                                @{Html.RenderAction("GetListImageProductDetail", "Product", new {productId = Model.ProductID});}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box" id="details">
+                        <h4>Chi tiết sản phẩm</h4>
+
+                        @Html.Raw(Model.Description)
+
+                        <h4>Đơn vị & Kích thước</h4>
+                        <ul>
+                            <li>Đơn vị: @Model.Unit</li>
+                            <li>Kích thước: @Model.Length@Model.LengthUnit x @Model.Width@Model.WidthUnit x @Model.Height@Model.HeightUnit </li>
+                        </ul>
+                        <h4>So sánh giá</h4>
+                        <ul>
+                            <li>Giá thị trường: @Model.PriceReal.ToString("###,###") VND</li>
+                            <li>Giá thấp nhất thị trường: @Model.PriceRealMin.ToString("###,###") VND</li>
+                            <li>Giá cao nhất thị trường: @Model.PriceRealMax.ToString("###,###") VND</li>
+                        </ul>
+
+                        <blockquote>
+                            <p>
+                                <em>Màu sắc: @Model.ColorDescription</em>
+                            </p>
+                        </blockquote>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="panel panel-default sidebar-menu">
+                        @{Html.RenderAction("ListCategoryLeft", "Category", new { activeCategoryId = Model.CategoryID });}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>        
+
+    </div>
+}

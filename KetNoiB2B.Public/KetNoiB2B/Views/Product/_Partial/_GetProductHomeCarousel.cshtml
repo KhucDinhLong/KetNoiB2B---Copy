@@ -1,0 +1,45 @@
+﻿
+@using KetNoiB2B.Utils
+@model List<SETA.Entity.Product>
+@{
+    Layout = null;
+}
+
+<section>
+    <!-- *** HOMEPAGE CAROUSEL ***
+    _________________________________________________________ -->
+
+    <div class="home-carousel">
+
+        <div class="dark-mask"></div>
+
+        <div class="container">
+            <div class="homepage owl-carousel">
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var product in Model)
+                    {
+                        <div class="item">
+                            <div class="row">
+
+                                <div class="col-sm-7 text-center">
+                                    <img class="img-responsive home-img-carousel" src="@WebUtils.GetImagePath(product.FirstImage)" alt="@product.ProductName">
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <h2>@product.ProductName</h2>
+                                    @Html.Raw(product.Description)
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                }                
+                
+            </div>
+            <!-- /.project owl-slider -->
+        </div>
+    </div>
+
+    <!-- *** HOMEPAGE CAROUSEL END *** -->
+</section>

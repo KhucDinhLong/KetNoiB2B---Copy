@@ -1,0 +1,23 @@
+﻿
+@model List<SETA.Entity.Category>
+@{
+    Layout = null;
+    var selectedCategoryId = ViewBag.SelectedCategoryId ?? 0;
+}
+
+<option value="0">Danh mục..</option>
+
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var category in Model)
+    {
+        if (selectedCategoryId == category.CategoryID)
+        {
+            <option value="@category.CategoryID" selected="selected">@category.CategoryName</option>
+        }
+        else
+        {
+            <option value="@category.CategoryID">@category.CategoryName</option>
+        }
+    }
+}

@@ -1,0 +1,14 @@
+﻿
+@model List<SETA.Entity.Product>
+@{
+    Layout = null;
+}
+
+<input type="hidden" value="@ViewBag.Total" id="total-page-@ViewBag.Page">
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var product in Model)
+    {
+        Html.RenderPartial("_Partial/_ProductItem", product);
+    }
+}

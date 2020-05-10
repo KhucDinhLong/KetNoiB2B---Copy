@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model KetNoiB2B.Models.Product.CategoryModel
+
+<div class="content-modal x_panel" id="addEditCategory">
+    <div class="x_title">
+        @if (Model.CategoryID > 0)
+        {
+            <h2>
+                Sửa Danh Mục <small>Chỉnh sửa danh mục</small>
+            </h2>
+        }
+        else
+        {
+            <h2>
+                Tạo Danh Mục <small>Thêm mới danh mục</small>
+            </h2>
+        }        
+        <div class="nav navbar-right panel_toolbox">
+            <a href="javascript:void(0)" class="close-link close k-grid-cancel"><i class="fa fa-close"></i></a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">        
+        @using (Html.BeginForm("SaveCategory", "Product", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {@class = "form-horizontal form-label-left", id = "frmAddEditCategory"}))
+        {
+            @Html.HiddenFor(m => m.CategoryID)
+
+            <div class="form-group">
+                <label class="control-label col-md-4 col-sm-4 col-xs-12">Tên Danh Mục <span class="Required">*</span></label>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    @Html.TextBoxFor(m => m.CategoryName, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.CategoryName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-4 col-sm-4 col-xs-12">Mô tả</label>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    @Html.TextAreaFor(m => m.Description, new {@class = "form-control", @rows = "5"})
+                    @Html.ValidationMessageFor(m => m.Description)
+                </div>
+            </div>
+
+            <div class="ln_solid"></div>
+
+            <div class="form-group">
+                <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                    <button type="button" class="btn btn-primary k-grid-cancel">Hủy bỏ</button>                    
+                    <button type="submit" class="btn btn-success k-grid-update">Lưu</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

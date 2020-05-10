@@ -1,0 +1,16 @@
+﻿
+@using KetNoiB2B.Utils
+@model List<SETA.Entity.Product>
+@{
+    Layout = null;
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="row products">
+        @foreach (var product in Model)
+        {
+            @Html.Partial("_Partial/_ProductItem", product)            
+        }
+    </div>
+}

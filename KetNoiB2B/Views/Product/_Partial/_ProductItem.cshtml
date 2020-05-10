@@ -1,0 +1,26 @@
+﻿
+@model SETA.Entity.Product
+@{
+    Layout = null;
+}
+
+<div class="col-md-55">
+    <div class="thumbnail">
+        <div class="image view view-first">
+            <img style="width: 100%; display: block;" src="@Model.FirstImage" alt="image" />
+            <div class="mask no-caption">
+                <div class="tools tools-bottom">
+                    <a href="javascript:void(0)"><i class="fa fa-link"></i></a>
+                    <a class="link-edit-product-item" href="javascript:void(0)" data-id="@Model.ProductID"><i class="fa fa-pencil"></i></a>
+                    <a class="link-delete-product-item" href="javascript:void(0)" data-id="@Model.ProductID"><i class="fa fa-times"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="caption">
+            <p>
+                <strong>@Model.ProductName</strong>
+            </p>
+            <p>@Model.CategoryName</p>
+        </div>
+    </div>
+</div>

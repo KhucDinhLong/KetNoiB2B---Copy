@@ -1,0 +1,18 @@
+﻿
+@using KetNoiB2B.Utils
+@model List<SETA.Entity.ProductImage>
+@{
+    Layout = null;
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var productImage in Model)
+    {
+        <div class="col-xs-4">
+            <a href="@WebUtils.GetImagePath(productImage.ImageUrl)" class="thumb">
+                <img src="@WebUtils.GetImagePath(productImage.ImageUrl)" alt="@productImage.FileName" class="img-responsive">
+            </a>
+        </div>
+    }
+}

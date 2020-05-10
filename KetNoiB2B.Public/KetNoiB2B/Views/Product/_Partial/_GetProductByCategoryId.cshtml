@@ -1,0 +1,70 @@
+﻿
+@using KetNoiB2B.Utils
+@model List<SETA.Entity.Product>
+@{
+    Layout = null;
+    var pageNum = ViewBag.Page ?? 0;
+    var totalRecord = ViewBag.Total ?? 0;
+    var totalPage = totalRecord/6;
+    if (totalRecord % 6 > 0)
+    {
+        totalPage += 1;
+    }
+    var categoryId = ViewBag.CategoryId ?? 0;
+    var pageFrom = pageNum - 2;
+    var pageTo = pageNum + 2;
+
+    if (pageFrom <= 0)
+    {
+        pageFrom = 1;
+    }
+
+    if (pageTo > totalPage)
+    {
+        pageTo = totalPage;
+    }
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="row products">
+        @foreach (var product in Model)
+        {
+            @Html.Partial("_Partial/_ProductItem", product)
+        }
+    </div>
+
+    <div class="pages">
+        <ul class="pagination">
+            @if (pageNum > 1)
+            {
+                <li>
+                    <a href="javascript:void(0)" onclick="getPageProduct(@categoryId, @(pageNum - 1))">&laquo;</a>
+                </li>
+            }
+
+            @for (int i = pageFrom; i <= pageTo; i++)
+            {
+                if (i == pageNum)
+                {
+                    <li class="active">
+                        <a href="javascript:void(0)" onclick="getPageProduct(@categoryId, @i)">@i</a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="javascript:void(0)" onclick="getPageProduct(@categoryId, @i)">@i</a>
+                    </li>
+                }
+            }
+
+            @if (pageNum < totalPage)
+            {
+                <li>
+                    <a href="javascript:void(0)" onclick="getPageProduct(@categoryId, @(pageNum + 1))">&raquo;</a>
+                </li>
+            }            
+        </ul>
+    </div>
+}

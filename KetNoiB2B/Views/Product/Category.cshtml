@@ -1,0 +1,252 @@
+﻿@using Kendo.Mvc.UI
+@using SETA.Common
+@using SETA.Common.Constants
+@using SETA.Entity
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //var tempTitle = "<a href='javascript:void(0)' title = '#=StudentName#' class=\"link-action masterTooltip text-ellipsis\" data-toggle='tooltip'><span>#=StudentName#</span></a>";
+    var tempAction = "<a href='javascript:void(0)' data-id='#=CategoryID#' class='btn btn-info btn-xs btn-edit-category'><i class='fa fa-pencil'></i> Sửa </a>" +
+                     "<a href='javascript:void(0)' data-id='#=CategoryID#' class='btn btn-danger btn-xs btn-delete-category'><i class='fa fa-trash-o'></i> Xóa </a>";
+
+    List<GridColumn> defaultColumns = null;
+    defaultColumns = new List<GridColumn>
+    {
+        new GridColumn { Field = "RowIndex", Title = "STT", Position = 1, Visiable = true, Filterable = false, Sortable = true, Width = 50},
+        new GridColumn { Field = "CategoryName", Title = "Tên Danh Mục", Position = 2, Visiable = true, Filterable = false, Sortable = true},
+        new GridColumn { Field = "Description", Title = "Mô tả", Position = 3, Visiable = true, Filterable = false, Sortable = true},
+        new GridColumn { Field = "CategoryID", Title = "", Position = 4, Visiable = true, Filterable = false, Sortable = true, Template = tempAction}
+    };
+}
+
+@section css {
+    <link rel="stylesheet" href="/Scripts/plugins/KendoUI/css/kendo.common.min.css" />
+    <link rel="stylesheet" href="/Scripts/plugins/KendoUI/css/kendo.default.min.css" />
+    <link rel="stylesheet" href="/Scripts/plugins/KendoUI/css/kendo.default.mobile.min.css" />
+}
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>
+            Danh mục <small>Quản lý danh mục</small>
+        </h3>
+    </div>
+
+    <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <button id="add-new-category" type="button" class="btn btn-primary">Tạo mới</button>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="#">Settings 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Settings 2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content">
+            <div class="table-responsive">
+
+                @(Html.Kendo()
+                    .Grid<Category>() // Model
+                    .HtmlAttributes(new
+                    {
+                        @class = "grid",
+                        key = "CategoryList",
+                    })
+                    .Name("CategoryList")
+                    .AutoBind(true)
+                    .Reorderable(p => p.Columns(true))
+                    .Resizable(p => p.Columns(true))                    
+                    .DataSource(dataSource => dataSource
+                        .Ajax()
+                        .Batch(false)
+                        .ServerOperation(true)
+                        .PageSize(25)
+                        .Read(read =>
+                        {
+                            read.Action("GetAllCategory_GridData", "Product");                            
+                        })                        
+                    )
+                    .Pageable(pageable =>
+                    {
+                        pageable.Numeric(false);
+                        pageable.PageSizes(new[] { 5, 15, 25, 50, 100 });
+                        pageable.Input(true).Refresh(true);
+                    })
+                    .Scrollable(scroll =>
+                    {
+                        scroll.Enabled(true);
+                        scroll.Virtual(false);
+                        scroll.Height("auto");
+                    })
+                    .Selectable(s => s.Mode(GridSelectionMode.Single))
+                    .Columns(columns =>
+                    {
+                        foreach (var gridColumn in defaultColumns)
+                        {
+                            var classCss = gridColumn.Field;
+                            if (gridColumn.Title == "")
+                            {
+                                classCss += " col-detail";
+                            }
+                            var colWidth = 150;
+                            if (gridColumn.Field == "No")
+                            {
+                                colWidth = 70;
+                            }
+                            if (Request.Browser.IsMobileDevice)
+                            {
+
+                                columns.Bound(gridColumn.Field)
+                                    .Title(gridColumn.Title)
+                                    .Encoded(false)
+                                    .Hidden(!gridColumn.Visiable)
+                                    .Width(gridColumn.Width)
+                                    .Filterable(gridColumn.Filterable)
+                                    .Sortable(gridColumn.Sortable)
+                                    .ClientTemplate(gridColumn.Template)
+                                    .HtmlAttributes(new { @class = classCss })
+                                    .HeaderHtmlAttributes(new { @class = classCss })
+                                    .IncludeInMenu(gridColumn.Menu)
+                                    .HeaderTemplate(gridColumn.HeaderTemplate)
+                                    .Width(colWidth)
+                                    .Groupable(true);
+                            }
+                            else
+                            {
+                                columns.Bound(gridColumn.Field)
+                                    .Title(gridColumn.Title)
+                                    .Encoded(false)
+                                    .Hidden(!gridColumn.Visiable)
+                                    .Width(gridColumn.Width)
+                                    .Filterable(gridColumn.Filterable)
+                                    .Sortable(gridColumn.Sortable)
+                                    .ClientTemplate(gridColumn.Template)
+                                    .HtmlAttributes(new { @class = classCss })
+                                    .HeaderHtmlAttributes(new { @class = classCss })
+                                    .IncludeInMenu(gridColumn.Menu)
+                                    .HeaderTemplate(gridColumn.HeaderTemplate)
+                                    .Groupable(true);
+                            }
+
+
+                            //.Width(200);
+                        }
+
+                    })                    
+                    .Sortable(sort =>
+                    {
+                        sort.AllowUnsort(true);
+                        sort.SortMode(GridSortMode.SingleColumn);
+                    })
+                    .Filterable(f => f.Enabled(true))
+                    .Events(events => events.DataBound("window.categoryJs.dataBoundCateGrid"))
+                )
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script
+{
+    <script src="/Scripts/plugins/kendoui/js/kendo.all.min.js"></script>
+    <script src="/Scripts/plugins/kendoui/js/kendo.aspnetmvc.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#add-new-category').on('click', function() {
+                var options = {
+                    id: 'popupAddNewCategory',
+                    width: 500,
+                    title: false,
+                    draggable: false,
+                    resizable: false
+                }
+                var popupWindow = window.pinJs.initPopupWindow(options);
+                popupWindow.refresh({
+                    url: "/Product/AddCategory",
+                    async: false
+                }).center().open();
+                $('#popupAddNewCategory').parent().addClass('popup-window');
+                $("#popupAddNewCategory").parent().addClass("mobileModal");
+                window.pinJs.initFormWindow('#frmAddEditCategory', popupWindow, $('#CategoryList'));
+            });            
+        });
+
+        var categoryJs = categoryJs || {};
+        $.extend(true, categoryJs, {
+            dataBoundCateGrid: function() {
+                $('.btn-edit-category').on('click', function () {
+                    var cateId = $(this).data('id');
+                    var options = {
+                        id: 'popupEditCategory',
+                        width: 500,
+                        title: false,
+                        draggable: false,
+                        resizable: false
+                    }
+                    var popupWindow = window.pinJs.initPopupWindow(options);
+                    popupWindow.refresh({
+                        url: "/Product/EditCategory",
+                        data: {
+                            id: cateId
+                        },
+                        async: false
+                    }).center().open();
+                    $('#popupAddNewCategory').parent().addClass('popup-window');
+                    $("#popupAddNewCategory").parent().addClass("mobileModal");
+                    window.pinJs.initFormWindow('#frmAddEditCategory', popupWindow, $('#CategoryList'));
+                });
+
+                $('.btn-delete-category').off('click').on('click', function() {
+                    var cateId = $(this).data('id');
+                    var x = confirm('Bạn có chắc chắn muốn xóa Danh Mục này không?');
+                    if (x) {
+                        $.post('/Product/DeleteCategory/' + cateId, function (result) {
+                            if (result.Success == true) {
+                                alertify.success(result.Message);
+                                debugger;
+                                var gridData = $('#CategoryList').data("kendoGrid");
+                                if (gridData) gridData.dataSource.read();
+                            } else {
+                                alertify.error(result.Message);
+                            }
+                        });
+                    }                       
+                });
+            }
+        });
+    </script>
+}
+
